@@ -11,10 +11,11 @@
     "dev:backend": "npm --prefix backend run dev",
     "dev:frontend": "npm --prefix frontend run dev",
     "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "build": "next build",
-    "dev": "next dev",
-    "lint": "next lint",
-    "start": "next start"
+    "build:all": "npm --prefix frontend run build",
+    "start:all": "concurrently \"npm --prefix backend run start\" \"npm --prefix frontend run start\"",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run start",
+    "lint": "npm --prefix frontend run lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -49,7 +50,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
-    "concurrently": "^9.1.0",
+    "concurrently": "^9.2.0",
     "cors": "latest",
     "date-fns": "4.1.0",
     "dotenv": "latest",
